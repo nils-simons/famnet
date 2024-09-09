@@ -4,8 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FAMNET</title>
+
+    <!-- CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./assets/css/header.css">
+    <link rel="stylesheet" href="./assets/css/switch.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+
+    <!-- JS -->
+    <script defer src="./assets/js/clients.js"></script>
+    <script defer src="./assets/js/status.js"></script>
 </head>
 <body>
-    <h1>FAMNET</h1>
+    <header>
+        <h1>FAMNET</h1>
+    </header>
+    <main>
+        <div class="switch-container">
+            <label class="switch">
+                <input onclick="toggle()" id="toggle" type="checkbox">
+                <span class="slider round"></span>
+            </label>
+        </div>
+        <div class="add-container">
+            <input id="add-name" type="text" placeholder="Name">
+            <input id="add-ip" type="text" placeholder="IP Adress">
+            <button id="add-btn">Add</button>
+        </div>
+        <div>
+            <table>
+                <tbody id="clients">
+                    <tr>
+                        <th>Name</th>
+                        <th>IP</th>
+                        <th>MAC</th>
+                        <th>Online</th>
+                        <th>Last Seen</th>
+                        <th>Actions</th>
+                    </tr>
+                    <tr>
+                        <td>Nils</td>
+                        <td>192.168.0.7</td>
+                        <td>00:0a:b3:29:09:01</td>
+                        <td>True</td>
+                        <td>28/09/2024 16h33</td>
+                        <td>
+                            <button>DELETE</button>
+                        </td>
+                    </tr>
+                    <!-- Data rows will be inserted dynamically -->
+                </tbody>
+            </table>
+        </div>
+    </main>
 </body>
 </html>
