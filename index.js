@@ -38,6 +38,12 @@ setInterval(async () => {
     }
 
     console.log(`Connected clients: ${connected_clients}`);
+    var status = await db.get('status')
+
+    if (status.enabled && connected_clients == 0) {
+        // ALARM ANLAGE ANMACHEN
+    }
+
 }, 1000 * 60)
 
 

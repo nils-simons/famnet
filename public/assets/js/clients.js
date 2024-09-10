@@ -17,8 +17,13 @@ async function loadClients() {
     </tr>
     `
 
+    var clientCount = 0
+
     for (let i = 0; i < data.data.length; i++) {
         const client = data.data[i];
+
+        if (client.connected) { clientCount++ }
+
         document.getElementById('clients').innerHTML += `
             <tr>
                 <td>${client.name}</td>
@@ -32,6 +37,9 @@ async function loadClients() {
             </tr>
         `
     }
+
+
+    document.getElementById('client-count').innerHTML = clientCount
 }
 
 loadClients()
